@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TeaTimeDemo.Models;
+
+namespace TeaTimeDemo.DataAccess.Repository.IRepository
+{
+    public interface IOrderHeaderRepository : IRepository<OrderHeader>
+    {
+        void Update(OrderHeader obj);
+
+        //更新訂單的狀態
+        void UpdateStatus(int id, string orderStatus, string? paymentStatus = null);
+    }
+}

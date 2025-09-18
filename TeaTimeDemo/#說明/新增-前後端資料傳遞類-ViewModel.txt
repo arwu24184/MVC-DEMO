@@ -1,0 +1,13 @@
+#1
+[建立資料庫內容]
+
+對 LwlEdu.Models/ViewModels 點擊右鍵->加入->新增項目->類別->創建NewTable
+
+---------------------------------------------------------------------------
+
+#2
+[填入內容]
+
+參考 LwlEdu.Models/ViewModels /SampleData_itemVM.cs
+
+使用方法 參考 SampleData_itemController.Create();

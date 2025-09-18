@@ -1,0 +1,40 @@
+#1
+[建立身分組]
+
+對LwlEdu點擊右鍵 -> 加入 -> 新增 scaffold 項目 -> MVC區域 -> 加入 -> 命名身分組
+
+刪除身分組內的 Data & Models
+
+
+ScaffoldingReadMe.txt
+
+
+---------------------------------------------------------------------------
+
+#2
+LwlEdu.Utilly.SD 
+
+
+
+---------------------------------------------------------------------------
+
+
+#3
+
+
+LwlEdu/Areas/Identity/Pages/Register.cshtml/Register.cshtml.cs
+
+
+[新增身分組]
+到 public async Task OnGetAsync(string returnUrl = null) 底下
+
+_roleManager.CreateAsync(new IdentityRole(SD.Role_Customer)).GetAwaiter().GetResult();
+
+
+---------------------------------------------------------------------------
+
+
+#4
+[建立預設]
+
+LwlEdu.DataAccess/DbInitializer/DbInitializer.cs

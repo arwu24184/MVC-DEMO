@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "99mutipler": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

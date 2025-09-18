@@ -1,0 +1,61 @@
+#1
+[建立資料庫內容]
+
+對 LwlEdu.Models 點擊右鍵->加入->新增項目->類別->創建NewTable
+
+參考  LwlEdu.Models/SqlSampleData.cs  填入資料庫內容
+
+記得改成 public
+
+---------------------------------------------------------------------------
+
+#2
+[資料庫 設定]
+進入 LwlEdu.DataAccess/Data/ApplicationDbContext
+
+加上 請自行命名
+public DbSet< NewTable > NewTableDatas { get; set; }
+
+
+加上預設資料
+modelBuilder.Entity< NewTable >().HasData
+
+---------------------------------------------------------------------------
+
+
+#3
+[add-migration]
+工具->Nuget套件管理員->套件管理器主控台
+
+
+設定預設專案為 LwlEdu.DataAccess
+
+在套件管理器主控台輸入   add-migration AddNewTableToDb (統一命名)
+
+接著輸入 update-database
+
+
+---------------------------------------------------------------------------
+
+
+
+#4
+[建立依賴注入]
+	-01  參考 LwlEdu.DataAccess/Repository & IRepository
+	
+		 建立 Repository &IRepository 版本的資料內容
+
+		 ( 複製 SqlSampleDataRepository   ISqlSampleDataRepository來改 )
+
+
+	-02  將 IRepository  設定進 UnitOfWork & UnitOfWork
+
+
+	-03  如果啟動不了 試著輸入 update-database
+
+---------------------------------------------------------------------------
+
+#5
+[建立ViewModel]
+
+參考 LwlEdu.Models / ViewModels
